@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Online Notes</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -34,6 +35,24 @@
                </div>
            </div>
        </nav>
+       
+       <!--Jumbotron-->
+       <div class="jumbotron" id="myContainer">
+         <div class="container">
+           <h1>Online Notes App</h1>
+          <p>Your notes whenver you need them.</p>
+          <p>Make your life easier, never forget what you need to know.</p>
+          <button type="button" class="btn btn-lg button-green signup">Sign up - it's free!</button>
+         </div>
+          
+       </div>
+       
+       <!--Footer-->
+       <footer>
+         <div class="container">
+           <p>FlyingFoxWeb Copyright &copy; <?php echo date("Y"); ?></p>
+         </div>
+       </footer>
    
    
    

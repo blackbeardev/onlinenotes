@@ -1,9 +1,47 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 /*Background image*/
 body {
     background: url("../img/bgImage2.jpg") no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
-    
+    font-family: 'Arvo', serif;
+    font-size: 10px;
+}
+
+/*Jumbotron*/
+.jumbotron {
+  background-color: transparent;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 25rem;
+  padding: 1rem;
+}
+
+/*Buttons*/
+
+.signup {
+  margin-top: 5rem;
+}
+
+.button-green {
+  background-color: rgba(114, 190, 35, .7);
+}
+
+.button-green:hover {
+  background-color: rgba(114, 190, 35);
+}
+
+footer {
+  font-size: 1.6rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
 }
 
 /*Custom navbar styling*/
@@ -16,6 +54,7 @@ body {
   background-image: linear-gradient(to bottom, #00aaff 0%, #0088cc 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00aaff', endColorstr='#ff0088cc', GradientType=0);
+  font-size: 1.6rem;
 }
 .navbar-custom .navbar-brand {
   color: #ffffff;
@@ -120,4 +159,23 @@ body {
 }
 .navbar-custom .navbar-link:hover {
   color: #c0c0c0;
+}
+
+
+
+
+
+
+
+/*Media Queries*/
+
+@media (max-width: 768px) {
+    .jumbotron {
+      margin-top: 8rem;
+
+    }
+    
+    .signup {
+      margin-top: .5rem;
+    }
 }
