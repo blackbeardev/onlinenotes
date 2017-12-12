@@ -8,6 +8,32 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        
+        .container {
+            margin-top: 120px;
+        }
+    
+        #done,
+        #allNotes,
+        #notePad {
+            display: none;
+        }
+        
+        .buttons {
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+    </style>
+    
 
   </head>
   <body>
@@ -40,14 +66,20 @@
        
       <!--Container-->
       
-      <div class="container" style="margin-top: 10rem;">
+      <div class="container">
           <div class="row">
               <div class="col-md-offset-3 col-md-6">
-                  <div>
+                  <div class="buttons">
                       <button type="button" id="addNote" class="btn btn-lg btn-info">Add Note</button>
                       <button type="button" id="editNote" class="btn btn-lg btn-info pull-right">Edit Note</button>
                       <button type="button" id="done" class="btn btn-lg button-green pull-right">Done</button>
                       <button type="button" id="allNotes" class="btn btn-lg btn-info">All Notes</button>
+                  </div>
+                  <div id="notePad">
+                        <textarea rows="10"></textarea>
+                  </div>
+                  <div id="notes" class="notes">
+                      <!-- Use Ajax code to retrieve notes from the db. -->
                   </div>
               </div>
           </div>

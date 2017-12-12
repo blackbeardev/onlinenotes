@@ -35,10 +35,9 @@ body {
   background-color: rgba(114, 190, 35);
 }
 
-#rememberme,
-#forgotpassword {
-  font-size: 1.8rem;
-}
+
+
+
 
 footer {
   font-size: 1.6rem;
@@ -165,7 +164,6 @@ footer {
 .navbar-custom .navbar-link:hover {
   color: #c0c0c0;
 }
-
 
 
 
