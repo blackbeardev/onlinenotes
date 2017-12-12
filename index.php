@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Online Notes</title>
-    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-  </head>
-  <body>
-       <!--Nav Bar-->
-       <nav role="navigation" class="navbar navbar-fixed-top navbar-custom">
-           <div class="container-fluid">
-               <div class="navbar-header">
-                   <a href="" class="navbar-brand">Online Notes</a>
-                   <button type="button" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse">
-                       <span class="sr-only">Toggle navigation</span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                   </button>
-               </div>
-               <div class="navbar-collapse collapse" id="navbar-collapse">
-                   <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Contact</a></li>
-                   </ul>
-                   <ul class="nav navbar-nav navbar-right">
-                        <li class=""><a href="#">Login</a></li>
-                   </ul>
-               </div>
-           </div>
-       </nav>
+<?php include("header.php"); ?>
        
        <!--Jumbotron-->
        <div class="jumbotron" id="myContainer">
@@ -42,23 +6,139 @@
            <h1>Online Notes App</h1>
           <p>Your notes whenver you need them.</p>
           <p>Make your life easier, never forget what you need to know.</p>
-          <button type="button" class="btn btn-lg button-green signup">Sign up - it's free!</button>
+          <button type="button" class="btn btn-lg button-green signup" data-target="#signupModal" data-toggle="modal">Sign up - it's free!</button>
          </div>
-          
        </div>
        
-       <!--Footer-->
-       <footer>
-         <div class="container">
-           <p>FlyingFoxWeb Copyright &copy; <?php echo date("Y"); ?></p>
-         </div>
-       </footer>
-   
-   
-   
-   
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+       <!--Login form-->
+       
+       <form method="POST" id="loginform">       
+            <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button class="close" data-dismiss="modal">
+                        &times;
+                      </button>
+                      <h4 id="myModalLabel">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--This div will be shown when someone logs in - comes from the php file-->
+                        <div id="loginmessage">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="loginemail" class="sr-only">Email</label>
+                            <input type="email" name="loginemail" class="form-control" placeholder="Email Address" maxlength="50" id="loginemail"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginpassword" class="sr-only">Password</label>
+                            <input type="password" name="loginpassword" class="form-control" placeholder="Enter your password" maxlength="30" id="loginpassword"/>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="rememberme" id="rememberme">
+                                Remember me
+                            </label>
+                            <a class="pull-right" style="cursor: pointer;" id="forgotpassword" data-dismiss="modal" data-target="#forgotpasswordModal" data-toggle="modal">Forgot password?</a>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn button-green" name="login" type="submit" value="Login!">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                          Cancel
+                        </button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="signupModal" data-toggle="modal">
+                          Register
+                        </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+       </form>
+       
+       <!--Forgot password form-->
+       
+        <form method="POST" id="forgotpasswordform">       
+            <div class="modal" id="forgotpasswordModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button class="close" data-dismiss="modal">
+                        &times;
+                      </button>
+                      <h4 id="myModalLabel">Forgot password? Enter your email address</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--This div will be shown when someone has forgotten their password - comes from the php file-->
+                        <div id="forgotpasswordmessage">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="forgotpasswordemail" class="sr-only">Email</label>
+                            <input type="email" name="forgotpasswordemail" class="form-control" placeholder="Email Address" maxlength="50" id="forgotpasswordemail"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn button-green" name="forgotpassword" type="submit" value="Submit">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                          Cancel
+                        </button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="signupModal" data-toggle="modal">
+                          Register
+                        </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+       </form>
+       
+       
+       
+       <!--Signup form-->
+        <form method="POST" id="signupform">       
+            <div class="modal" id="signupModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button class="close" data-dismiss="modal">
+                        &times;
+                      </button>
+                      <h4 id="myModalLabel"> Sign up today and start using the Online Notes App!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--This div will be shown when someone signs up - comes from the php file-->
+                        <div id="sigupmessage">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Username" maxlength="30" id="username"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" maxlength="50" id="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Choose a password" maxlength="30" id="password"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmpassword" class="sr-only">Confirm Password</label>
+                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" maxlength="30" id="confirmpassword"/>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn button-green" name="signup" type="submit" value="Sign up!">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                          Cancel
+                        </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+       </form>
+       
+<?php include("footer.php"); ?>
