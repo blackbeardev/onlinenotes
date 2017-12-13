@@ -7,7 +7,7 @@
     <title>Online Notes</title>
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
 
   </head>
   <body>
